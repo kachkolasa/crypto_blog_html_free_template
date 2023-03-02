@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            prefix: "tw-",
+            theme: {
+                extend: {
+                    colors: {
+                    primary: '#EAB333',
+                    secondary: "#070C3C"
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <link rel="icon" type="image/x-icon" href="static/logo/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Style -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg !tw-bg-[#16181D] tw-py-0">
+        <div class="container">
+        <a class="navbar-brand tw-flex tw-items-center tw-gap-3" href="index.html">
+            <img src="static/logo/logo.png" alt="" class="tw-w-[45px]">
+            <span class="poppins tw-uppercase tw-font-light tw-tracking-wide tw-text-base">Developer Wings</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 tw-gap-5">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posts.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posts.html">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <section class="crypto-banner tw-py-2 tw-border-b tw-border-zinc-900 tw-sticky tw-top-0 tw-z-[999] tw-bg-[#0F1014] tw-hidden lg:tw-block">
+        <div class="container">
+            <div class="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-text-sm">
+                <div class="tw-flex tw-gap-2 bitcoin">
+                    <span>Bitcoin</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="btc-price"></span>
+                </div>
+                <div class="tw-flex tw-gap-2 ethereum">
+                    <span>Ethereum</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="eth-price"></span>
+                </div>
+                <div class="tw-flex tw-gap-2 binance-coin">
+                    <span>Binance Coin</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="bnb-price"></span>
+                </div>
+                <div class="tw-flex tw-gap-2 solana">
+                    <span>Solana</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="sol-price"></span>
+                </div>
+                <div class="tw-flex tw-gap-2 xrp">
+                    <span>XRP</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="xrp-price"></span>
+                </div>
+                <div class="tw-flex tw-gap-2 doge">
+                    <span>Doge</span>
+                    <span><i class="bi tw-text-[8px]"></i></span>
+                    <span class="tw-px-2 tw-rounded-sm tw-text-black tw-text-xs tw-flex tw-items-center" id="doge-price"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tw-min-h-[50vh] lg:tw-min-h-[60vh] tw-py-5 tw-flex tw-flex-wrap tw-items-center tw-w-full tw-relative before:tw-content-[''] before:tw-absolute before:tw-top-0 before:tw-left-0 before:tw-w-full before:tw-h-full before:tw-bg-cover before:tw-bg-center before:tw-bg-[url(static/images/bg.jpg)] before:tw-blur-[90px] tw-overflow-hidden">
+        <div class="container tw-z-[1]">
+            <p class="lg:tw-text-lg">Welcome to Developer Wings</p>
+            <h1 class="tw-text-4xl lg:tw-text-8xl tw-font-black tw-my-9 lg:tw-my-16">DeveloperWings.com</h1>
+            <p class="lg:tw-text-lg">Stay informed with honest and reliable cryptocurrency news and reviews from our team of experts</p>
+        </div>
+    </section>
+
+    <section class="tw-py-5 lg:tw-py-16">
+        <div class="container">
+            <div class="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mb-16">
+                <h2 class="tw-text-3xl tw-font-bold">What's new?</h2>
+                <div>
+                    <a href="posts.html" class="tw-font-medium">View All <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="owl-carousel" id="latest">
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/1.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/1.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">News</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/2.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/2.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/3.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/3.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/4.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/4.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest -->
+
+    <section class="tw-py-5 lg:tw-py-16 tw-bg-[#16181D]">
+        <div class="container">
+            <div class="tw-grid lg:tw-grid-cols-2 tw-gap-10">
+                <div>
+                    <a href="posts.html">
+                        <div class="tw-rounded-2xl tw-overflow-hidden tw-min-h-[400px] tw-relative category-block tw-flex tw-flex-wrap tw-items-end reviews">
+                            <div class="tw-z-[2] tw-relative tw-p-10">
+                                <h4 class="tw-font-bold tw-text-4xl">Reviews</h4>
+                                <p>View all <i class="bi bi-arrow-right"></i></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="posts.html">
+                        <div class="tw-rounded-2xl tw-overflow-hidden tw-min-h-[400px] tw-relative category-block tw-flex tw-flex-wrap tw-items-end news">
+                            <div class="tw-z-[2] tw-relative tw-p-10">
+                                <h4 class="tw-font-bold tw-text-4xl">News</h4>
+                                <p>View all <i class="bi bi-arrow-right"></i></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section class="tw-py-5 lg:tw-py-16">
+        <div class="container">
+            <div class="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mb-16">
+                <h2 class="tw-text-3xl tw-font-bold">Latest News</h2>
+                <div>
+                    <a href="posts.html" class="tw-font-medium">View All <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="owl-carousel" id="news">
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/5.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/5.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">News</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/6.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/6.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">News</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/7.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/7.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">News</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/8.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/8.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">News</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="tw-py-5 lg:tw-py-16">
+        <div class="container">
+            <div class="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mb-16">
+                <h2 class="tw-text-3xl tw-font-bold">Reviews</h2>
+                <div>
+                    <a href="posts.html" class="tw-font-medium">View All <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="owl-carousel" id="reviews">
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/1.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/1.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/2.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/2.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/3.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/3.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="hover:!tw-text-white" href="single-post.html">
+                    <div class="tw-rounded-2xl tw-overflow-hidden tw-relative">
+                        <img src="static/images/4.jpg" class="tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-blur-[90px]" alt="">
+                        <div class="tw-relative tw-top-0 tw-left-0 tw-w-full">
+                            <img src="static/images/4.jpg" class="tw-w-full tw-h-[230px] tw-object-cover" alt="">
+                            <div class="tw-p-5">
+                                <p class="tw-font-light tw-text-sm tw-uppercase tw-tracking-wide">Reviews</p>
+                                <h4 class="tw-text-lg tw-font-bold tw-my-5">Developer Wings is a great blog for web developers!</h4>
+                                <div class="tw-flex tw-flex-wrap tw-gap-3 tw-items-center">
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">Kachkol Asa</p>
+                                    <span><i class="bi bi-dot tw-text-2xl"></i></span>
+                                    <p class="tw-font-light tw-text-sm tw-tracking-wide">27th of January, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="tw-pt-5">
+        <div class="container">
+            <div class="tw-flex tw-flex-wrap tw-justify-center">
+                <div class="tw-w-full">
+                    <img src="static/logo/logo.png" class="tw-w-[80px] tw-mx-auto" alt="">
+                    <h5 class="tw-text-center tw-text-xl tw-my-5 poppins tw-uppercase tw-tracking-wider ">Developer Wings</h5>
+                    <ul class="tw-flex tw-justify-center tw-gap-4 tw-text-xl tw-text-[#838997] tw-mb-5">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="bi bi-telegram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/" target="_blank"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="mailto:example@mail.com" target="_blank"><i class="bi bi-envelope-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw-justify-between tw-text-xs tw-text-[#838997] tw-border-t tw-border-zinc-900 tw-py-4 tw-mt-5">
+                <div>
+                    <p>&copy; 2023 - All rights reserved.</p>
+                </div>
+                <div>
+                    <p>Developed by <a href="https://developerwings.com" target="_blank">Developer Wings</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="static/js/scripts.js"></script>
+    <script>
+        $(document).ready(function(){
+            const latestCaoursel = $("#latest").owlCarousel({
+                items: 1.5,
+                loop: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    768: {
+                        items: 3.2,
+                    }
+                }
+            });
+            const newsCaoursel = $("#news").owlCarousel({
+                items: 1.5,
+                loop: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    768: {
+                        items: 3.2,
+                    }
+                }
+            });
+            const reviewsCaoursel = $("#reviews").owlCarousel({
+                items: 1.5,
+                loop: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    768: {
+                        items: 3.2,
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
